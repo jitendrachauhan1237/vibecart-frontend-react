@@ -1,0 +1,160 @@
+.hero {
+  height: 100vh;
+  background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+  display: flex;
+  font-family: "Poppins";
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 130px;
+  line-height: 1.1;
+  margin-top: 100px;
+  z-index: 2;
+  position: absolute;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Start with a bottom translation */
+  animation: fadeInUp 1s ease-out forwards; /* Animation for text */
+}
+
+.hero-left h2 {
+  color: #090909;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.hero-left p {
+  color: #171717;
+  font-size: 60px;
+  font-weight: 600;
+  margin-top: -20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.hand-icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.hand-icon .new{
+margin-top: 20px;
+}
+.hand-icon img {
+  width: 80px;
+  margin-top: 20px;
+}
+
+.hero-latest-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 250px;
+  height: 66px;
+  border-radius: 75px;
+  margin-top: 30px;
+  background: #ff4141;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 1s ease-out forwards 0.5s; /* Delay for button */
+}
+
+.hero-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%; /* Start from the center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+  z-index: 1;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 100%;
+  transition: transform 1s ease-in-out;
+  max-height: 100vh; /* Ensure image height stays within view */
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  transition: left 1s ease-in-out; /* Sliding transition */
+}
+
+.hero-slide.active {
+  left: 10%; /* Move to the center */
+  animation: slideInRight 1s ease-in-out; /* Animation for sliding the image */
+}
+
+.hero-right img {
+  width: 450px;
+  margin-left: 100px;
+  margin-top: 0px;
+}
+
+/* For slider navigation (optional dots for slider controls) */
+.slider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slider-nav div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.slider-nav div.active {
+  background-color: #ff4141; /* Active dot style */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* @keyframes slideInRight {
+  to {
+    left: 60%;
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    left: 60%;
+  }
+} */
