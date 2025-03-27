@@ -8,20 +8,25 @@ import Product from "./pages/product";
 import Cart from "./pages/cart";
 import LoginSignup from "./pages/loginsignup";
 import Footer from "./components/Footer/Footer";
- import men_banner from "./components/Assets/men-banner.png";
- import women_banner from "./components/Assets/women-banner.png";
+import men_banner from "./components/Assets/men-banner.png";
+import women_banner from "./components/Assets/women-banner.png";
 import kid_banner from "./components/Assets/kids-banner.png";
 import BottomNavbar from "./components/BottomNavbar/BottomNavbar";
 import Profile from "./components/Profile";
-// Import ShopContextProvider
 import ShopContextProvider from "./context/ShopContext";
 import Card from "./components/Card";
+import { AnimatePresence } from "framer-motion";
+
 
 function App() {
   return (
     <ShopContextProvider>
       <BrowserRouter>
+      <AnimatePresence mode="wait">
         <Navbar />
+
+
+        
         <Routes>
           <Route path="/" element={<Shop />} />
           <Route
@@ -40,11 +45,15 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/card" element={<Card />} />
-           <Route path="/profile" element= {<Profile />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
-        
         <Footer />
-        <BottomNavbar/>
+        </AnimatePresence>
+
+       
+
+       
+        <BottomNavbar />
       </BrowserRouter>
     </ShopContextProvider>
   );

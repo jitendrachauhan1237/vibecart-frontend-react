@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import transition from "../components/PageAnimation";
+
+
 function Front() {
   return (
     <div className="h-[180px]  md:h-screen bg-gradient-to-b from-blue-100 to-transparent flex items-center justify-center relative mt-18 overflow-hidden">
@@ -18,4 +21,4 @@ function Front() {
   );
 }
 
-export default Front;
+export default transition(Front);
